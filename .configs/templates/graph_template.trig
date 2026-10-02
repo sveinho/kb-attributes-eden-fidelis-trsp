@@ -3,7 +3,7 @@
 # Sections are populated from TTL source files via the pipeline.
 # ============================================================
 
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -11,25 +11,28 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix openrel: <https://w3id.org/openrel/> .
+@prefix trsp: <https://w3id.org/openrel/> .
 
 # ==================================================================================================================
 # SECTION 1: PROVENANCE AND METADATA
 # Describes the dataset itself — who generated it, when, and how.
 # ==================================================================================================================
-openrel:provenanceGraph {
-    openrel:dataset a dct:Dataset ;
-        dct:title "TRSP Repository or Service Graph Template" ;
-        dct:description "Populated graph of repository nodes with support nodes for contacts and institutions." ;
-        dct:created "TEMPLATE_DATE"^^xsd:date ;
-        dct:modified "TEMPLATE_DATE"^^xsd:date ;
-        dct:hasVersion "1.0" ;
-        dct:publisher openrel:org-publisher ;
-        prov:wasGeneratedBy openrel:curationActivity .
 
-    openrel:curationActivity a prov:Activity ;
-        prov:startedAtTime "TEMPLATE_DATE"^^xsd:dateTime ;
-        prov:wasAssociatedWith openrel:org-publisher ;
+trsp:provenanceGraph {
+    trsp:dataset a dct:Dataset ;
+        dct:title "[[GRAPH_TITLE]]" ;
+        dct:description "[[GRAPH_DESCRIPTION]]" ;
+        dct:creator <[[CREATOR_IRI]]> ;
+        dct:created "[[CREATED_DATE]]"^^xsd:dateTime ;
+        dct:modified "[[MODIFIED_DATE]]"^^xsd:dateTime ;
+        dct:hasVersion "[[VERSION]]" ;
+        dct:publisher <[[INSTITUTION_NODE]]> ;
+        prov:wasGeneratedBy <[[ACTIVITY_NODE]]> .
+
+    <[[ACTIVITY_NODE]]> a prov:Activity ;
+        dct:creator <[[CREATOR_IRI]]> ;
+        prov:startedAtTime "[[START_DATE]]"^^xsd:dateTime ;
+        prov:wasAssociatedWith <[[INSTITUTION_NODE]]> ;
         rdfs:label "Automated graph curation" .
 }
 
@@ -37,16 +40,21 @@ openrel:provenanceGraph {
 # SECTION 2: MAIN NODES (Repository Nodes)
 # Primary entities being curated. Each main node references
 # support nodes by IRI (contacts, institutions, services, checklists, etc.).
-# Populated from TTL source files containing repository, person, institution, checklists, etc. properties.
+# Populated from TTL/CSV source files containing repository, person, institution, checklists, etc. properties.
 # ==================================================================================================================
-openrel:mainNodesGraph {
-    # --- Repository nodes are inserted here ---
-    # Example:
-    # openrel:repo-001 a dcat:Repository ;
-    #     dct:title "Example Repository" ;
-    #     dct:description "A research data repository." ;
-    #     openrel:hasContact openrel:person-001 ;
-    #     openrel:hasInstitution openrel:org-001 .
+
+trsp:repoGraph {
+# --- Repository nodes are inserted here ---
+
+     <[[REPO_IRI]]> a dcat:Catalogue ;
+         dct:title "[[REPOSITORY_NAME]]" ;
+         dct:description "[[REPOSITORY_DESCRIPTION]]" ;
+         trsp:contact <[[CONTACT_NODE]]> ;
+         trsp:hasEvidence {{BLANK_EVIDENCE}};
+         trsp:hasService {{BLANK_SERVICE}};
+         trsp:linkedInstitution {{BLANK_INSTITUTIONLINK}} ;
+         trsp:hasCheckList {{BLANK_CHECKLISTLINK}}
+        .
 }
 
 # ==================================================================================================================
@@ -55,15 +63,25 @@ openrel:mainNodesGraph {
 # support nodes by IRI (contacts, institutions, services, checklists, etc.).
 # Populated from TTL source files containing repository, person, institution, checklists, etc. properties.
 # ==================================================================================================================
-openrel:mainNodesGraph {
+trsp:serviceGraph {
     # --- Service nodes are inserted here ---
-    # Example:
-    # openrel:service-001 a dcat:Service ;
-    #     dct:title "Example Service" ;
-    #     dct:description "A repository service." ;
-    #     trsp:serviceType skos:Concept - must come from .configs/vocabs/eosc/service-type.ttl
-    #     openrel:hasContact openrel:person-001 ;
-    #     openrel:hasInstitution openrel:org-001 .
+
+     <[[SERVICE_IRI]]> a dcat:Service ;
+         dct:title "[[SERVICE_TITLE]]" ;
+         dct:description "[[SERVICE_DESCRIPTION]]" ;
+         trsp:hasContact <[[CONTACT_NODE]]> ;
+         trsp:organisationIdentifierUrl <[[INSTITUTION_NODE]]> ;
+         trsp:serviceMaturityAssessment [[TRSP_TRL_TYPE]] ;
+         # - must come from .configs/vocabs/attr/trl-type.ttl
+         trsp:typeAPI [[TRSP_API_TYPE]] ; 
+         # - must come from .configs/vocabs/attr/api-list-check.ttl
+         trsp:identifierAPI <[[REGISTRY_IRI]]> ;
+         trsp:endpointAPI <[[API_URL]]> ;
+         trsp:apiConformsTo <[[SPEC_URL]]> ;
+         trsp:apiFormatSupport [[IRI_LIST]] ;
+         # ideally from Data Commons Format list, can be more than one value
+         trsp:apiDocumentation <[[DOCS_URL]]> 
+        .
 }
 
 # ==================================================================================================================
@@ -73,39 +91,41 @@ openrel:mainNodesGraph {
 # ==================================================================================================================
 
 # --- 4a: Contact Persons (vcard objects) ---
-openrel:supportContactsGraph {
+trsp:supportContactsGraph {
     # --- Contact person nodes are inserted here ---
-    # Example:
-    # openrel:person-001 a vcard:Individual ;
-    #     vcard:fn "Jane Doe" ;
-    #     vcard:hasEmail <mailto:jane.doe@example.org> ;
-    #     vcard:hasTelephone <tel:+3100000000> .
+
+     <[[CONTACT_IRI]]> a vcard:Individual ;
+         vcard:fn "[[NAME]]" ;
+         vcard:hasEmail <mailto:[[MAIL_TO]]> ;
+         vcard:hasTelephone <tel:[[PHONE]]> .
 }
 
 # --- 4b: Institutions (foaf objects, reused across repositories) ---
-openrel:InstitutionsGraph {
+trsp:institutionsGraph {
     # --- Institution nodes are inserted here ---
-    # Example:
-    # openrel:org-001 a foaf:Organization ; # This can be a registry identifier if applicable
-    #     foaf:name "University X" ;
-    #     foaf:homepage <https://university-x.example.org> ;
-    #     openrel:hasRorId <https://ror.org/000000000> ;
-    #     openrel:institutionRole skos:Concept - must come from .configs/vocabs/attr/institution-role-type.ttl
+
+     <[[INSTITUTION_NODE]]> a foaf:Organization ; # This can be a registry identifier if applicable
+         foaf:name "[[INSTITUTION_NAME]]" ;
+         foaf:homePage <[[HOME_PAGE]]> ;
+         trsp:hasIdentifier <[[IDENTIFIER]]> ;
     .
 }
 
 # --- 4c: Checklists (openrel checklist objects) ---
-openrel:checklistGraph {
+trsp:checklistGraph {
     # --- Checklist nodes are inserted here ---
-    # Example:
-    # openrel:check-001 a openrel:Checklist ;
-    #     openrel:checklistSource "" # must come from one of '.configs/vocabs/attr' vocabularies
-    #     openrel:checkItems  
-    #        [ a openrel:ChecklistItem ;
-    #          openrel:checklistIRI "" # a concept IRI from a vocabulary at '.configs/vocabs/attr vocabularies'
-    #          openrel:evidenceIRL ""^^xsd:anyURI ],
-    #        [ a openrel:ChecklistItem ;
-    #          openrel:checklistIRI "" # a concept IRI from a vocabulary at '.configs/vocabs/attr vocabularies'
-    #          openrel:evidenceIRL ""^^xsd:anyURI ]
-    #     .
+
+     <[[CHECKLIST_IRI]]> a trsp:Checklist ;
+         trsp:checklistSource <[[CHECKLIST_SOURCE_IRI]]> ;# must come from one of '.configs/vocabs/attr' vocabularies
+         trsp:checkItems  
+            [ a trsp:ChecklistItem ;
+              trsp:checklistIRI [[TRSP_CHECK_TYPE]] ; 
+              # a concept IRI from a vocabulary at '.configs/vocabs/attr vocabularies'
+              trsp:evidenceIRI <[[EVIDENCE_IRI]]> ],
+            [ a trsp:ChecklistItem ;
+              trsp:checklistIRI [[TRSP_CHECK_TYPE]] ; 
+              # a concept IRI from a vocabulary at '.configs/vocabs/attr vocabularies'
+              trsp:evidenceIRI <[[EVIDENCE_IRI]]> ]
+         .
 }
+
