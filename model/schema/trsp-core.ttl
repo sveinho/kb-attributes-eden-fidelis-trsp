@@ -1,0 +1,452 @@
+@prefix trsp: <https://example.org/trsp/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+trsp:Ontology
+    a owl:Ontology ;
+    dct:title "TRSP Ontology"@en ;
+    dct:description "TRSP Ontology: Schema definition, concept schemes, and constraints for Attributes, Profiles, Repositories, and Services. Used by TRSP WG, EOSC EDEN, and EOSC FIDELIS."@en ;
+    dct:created "2026-04-29T00:00:00+00:00"^^xsd:datetime;
+    dct:modified "2026-08-23T00:00:00+00:00"^^xsd:datetime;
+    dct:creator <https://orcid.org/0000-0002-0255-5101>;
+    dct:contributor <https://orcid.org/0000-0003-1106-8441> .
+
+####################################################################################################################################
+# Core Classes
+####################################################################################################################################
+
+## Repository
+trsp:Repository
+    a owl:Class ;
+    rdfs:label "Repository"@en ;
+    trsp:correspondingClass dcat:Catalog ;
+    skos:definition "An archive, repository, or other managed collection of digital resources, including its supporting services and functionalities."@en .
+
+## Service
+trsp:Service
+    a owl:Class ;
+    rdfs:subClassOf schema:Service ;
+    rdfs:label "Service"@en ;
+    skos:definition "A capability or activity provided for the benefit of one or more consumers, which may be performed manually, automatically, or through a combination of manual and automated processes."@en .
+
+## API Service
+trsp:APIService
+    a owl:Class ;
+    rdfs:subClassOf trsp:Service ;
+    rdfs:label "API Service"@en ;
+    skos:definition "A service that provides a machine-accessible application programming interface through which operations or functionality can be invoked. A repository or other agent may provide or consume one or more API services."@en .
+
+
+####################################################################################################################################
+# Classes used for Attributes and Profiles
+####################################################################################################################################
+
+## Attribute
+trsp:Attribute
+    a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Attribute"@en ;
+    skos:definition
+        "A consolidated characteristic of a repository or service used as a neutral semantic reference for mapping and comparison."@en .
+
+## Profile
+trsp:Profile
+    a owl:Class ;
+    rdfs:label "Profile"@en ;
+    skos:definition "A specification defining a set of properties and associated constraints applicable to the description of a resource."@en .
+
+## Repository Profile
+trsp:RepositoryProfile
+    a owl:Class ;
+    rdfs:subClassOf trsp:Profile ;
+    rdfs:label "Repository Profile"@en ;
+    skos:definition "A profile defining a set of properties and associated constraints that may be used to describe a repository."@en .
+
+# Service Profile
+trsp:ServiceProfile 
+    a owl:Class ; 
+    rdfs:subClassOf trsp:Profile ; 
+    rdfs:label "Service Profile"@en ;
+    trsp:correspondingClass dcat:DataService ;
+    skos:definition "A Service is defined as any manual or automated service. Repositories can offer or consume one or more Services" .
+
+# Source Profile
+trsp:SourceProfile 
+    a owl:Class ; 
+    rdfs:subClassOf trsp:Profile ; 
+    rdfs:label "Source Profile"@en ;
+    skos:definition "A Source of authoritative definitions of actions, attributes, characteristics, and functions of Repositories and Services" .
+
+# Standard Profile
+trsp:StandardProfile a rdfs:Class ; 
+    rdfs:subClassOf trsp:Profile ; 
+    rdfs:label "Standards Profile"@en ;
+    skos:definition "A Source of authoritative definitions of actions, attributes, characteristics, and functions of Repositories and Services" .
+
+# Community Profile
+trsp:CommunityProfile a rdfs:Class ; 
+    rdfs:subClassOf trsp:Profile ; 
+    rdfs:label "Community Profile"@en ;
+    skos:definition "A set of Attributes of a Repository or Service defined by a Community" .
+
+## Profile Property
+trsp:ProfileProperty
+    a owl:Class ;
+    rdfs:label "Profile Property"@en ;
+    skos:definition "A definition of the use of an RDF property within a particular profile, including any constraints, mappings, or other characteristics applicable to that use."@en .
+
+####################################################################################################################################
+# Properties used for Attributes and Profiles
+####################################################################################################################################
+
+## has profile
+trsp:hasProfile
+    a owl:ObjectProperty ;
+    rdfs:label "has profile"@en ;
+    rdfs:range trsp:Profile ;
+    skos:definition "Relates a resource to a profile that defines a set of properties and associated constraints applicable to the description of that resource."@en .
+
+## has property
+trsp:hasProperty
+    a owl:ObjectProperty ;
+    rdfs:label "has property"@en ;
+    rdfs:domain trsp:Profile ;
+    rdfs:range trsp:ProfileProperty ;
+    skos:definition "Relates a profile to a profile property defining the use of an RDF property within that profile."@en .
+
+## property definition
+trsp:property
+    a owl:ObjectProperty ;
+    rdfs:label "property"@en ;
+    rdfs:domain trsp:ProfileProperty ;
+    rdfs:range rdf:Property ;
+    skos:definition "Identifies the RDF property represented by a profile property."@en .
+
+####################################################################################################################################
+# Classes and Proiperties used for Evidence and Checklists
+####################################################################################################################################
+
+# Evidence
+trsp:Evidence a rdfs:Class ; 
+    rdfs:label "Evidence"@en ;
+    skos:definition "Evidence can be offered as references to local or external IRIs, qualified by type where necessary"@en ;
+    skos:note ""@en .
+
+# Evidence
+# <p1> a trsp:Evidence ;
+#    dct:title "My Versioning Policy"@en ;
+#    trsp:evidenceType trsp:policyVersioning ;
+#    trsp:evidenceIRL <https://evidenceurl.com> ;
+#    trsp:validityStart "2026-07-12T00:00:00+00:00" ;
+#    trsp:validityEnd "2026-07-12T00:00:00+00:00" ;
+#    trsp:evidenceStatus "Draft" ;
+#    dct:conformsTo <https://someSpecification.org> ;
+#    trsp:authority <https:/myNetworkOrganisation.org> .
+
+
+# Standard
+
+# Feature
+
+# Algorithm
+
+# Policy 
+
+# DateInterval
+
+# Source/ Reference
+#trsp:SourceReference
+
+# Attribute/ Property Definition
+# trsp:PropertyDefinition
+
+##################################################################
+# TRSP Classes that are used by Mappings
+##################################################################
+
+# ImpliedStatement
+trsp:Attribute a rdfs:Class ; 
+    rdfs:label "Implied Statement"@en ;
+    skos:definition "A mapping transformation between a subject and object by implication."@en .
+
+##################################################################
+# TRSP Properties that are used by Mappings
+##################################################################
+
+trsp:correspondingClass a owl:ObjectProperty ;
+    rdfs:label "has Corresponding Class"@en ;
+    rdfs:domain trsp:Profile ;
+    rdfs:range trsp:Class .
+
+trsp:correspondingProperty a owl:ObjectProperty ;
+    rdfs:label "has Corresponding Property"@en ;
+    rdfs:domain trsp:Property ;
+    rdfs:range rdf:Property .
+
+trsp:impliedStatement a owl:ObjectProperty ;
+    rdfs:label "implied Statement"@en ;
+    rdfs:domain rdf:Class ;
+    rdfs:range trsp:ImpliedStatement .
+
+trsp:object a owl:ObjectProperty ;
+    rdfs:label "implied object"@en ;
+    rdfs:domain trsp:ImpliedStatement ;
+    rdfs:range rdf:Class .
+
+trsp:predicate a owl:ObjectProperty ;
+    rdfs:label "implied predicate"@en ;
+    rdfs:domain trsp:ImpliedStatement ;
+    rdfs:range rdf:Property .
+
+trsp:subject a owl:ObjectProperty ;
+    rdfs:label "implied subject"@en ;
+    rdfs:domain trsp:ImpliedStatement ;
+    rdfs:range rdf:Class .
+
+##################################################################
+# TRSP Class Properties that require values from controlled vocabulary
+##################################################################
+
+# ProfileType - one of the values from trsp:profile-type-scheme
+trsp:profileType a rdfs:Class ; rdfs:label "Profile Type"@en .
+
+# MeaurementType - one of the values from trsp:measurement-type-scheme
+trsp:MeasurementType a rdfs:Class ; rdfs:label "Measurement Type"@en .
+
+# RelationType - one of the values from trsp:relation-type-scheme
+trsp:RelationType a rdfs:Class ; rdfs:label "Relations Type"@en .
+
+# Aggregation Type - one of the values from trsp:profile-aggregation-type-scheme
+trsp:AggregationType a rdfs:Class ; rdfs:label "Aggregation type"@en .
+
+# Cardinality type - one of the values from trsp:cardinality-scheme
+trsp:CardinalityType a rdfs:Class ; rdfs:label "Cardinality type"@en .
+
+# ServiceRelation Type one of the values from trsp:service-relation-scheme 
+trsp:ServiceRelation a rdfs:Class ; rdfs:label "Service relation"@en .
+
+##################################################################
+# Classes that define objects that are reusable
+##################################################################
+
+# ExternalIdentifier - holds minimum properties of an external identifier
+trsp:ExternalIdentifier a rdfs:Class ; rdfs:label "External identifier"@en .
+
+# AnnotationReference - holds minimum properties of an annotation to support an assertion
+trsp:AnnotationReference a rdfs:Class ; rdfs:label "Annotation reference"@en .
+
+# AttributeAssertion - holds minimum properties of a measurement or value of an attribute for a Repository or Service
+trsp:AttributeAssertion a rdfs:Class ; rdfs:label "Attribute assertion"@en .
+
+# ProfileAssertion - holds minimum properties of the relation between an Attribute and a Profile
+trsp:ProfileAssertion a rdfs:Class ; rdfs:label "Profile assertion"@en .
+
+#################################################################
+# Properties to be added
+#################################################################
+
+# imperative domain skos:Concept
+
+
+
+
+#################################################################
+# Identifier properties
+#################################################################
+
+trsp:hasExternalIdentifier a rdf:Property ;
+    rdfs:label "has external identifier"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range trsp:ExternalIdentifier .
+
+trsp:identifierIri a rdf:Property ;
+    rdfs:label "identifier IRI"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Resource .
+
+trsp:identifierUsage a rdf:Property ;
+    rdfs:label "identifier usage"@en ;
+    rdfs:domain trsp:ExternalIdentifier ;
+    rdfs:range skos:Concept .
+
+#################################################################
+# Relations and Annotation properties
+# Mostly to external objects
+#################################################################
+
+trsp:relationType a rdf:Property ;
+    rdfs:label "relation type"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range trsp:RelationType .
+
+trsp:object a rdf:Property ;
+    rdfs:label "object"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Resource .
+
+trsp:contextIRI a rdf:Property ;
+    rdfs:label "context IRI"@en ;
+    rdfs:domain trsp:ExternalIdentifier ;
+    rdfs:range rdfs:Resource .
+
+trsp:hasAnnotation a rdf:Property ;
+    rdfs:label "has annotation"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range trsp:AnnotationReference .
+
+trsp:webReference a rdf:Property ;
+    rdfs:label "web reference"@en ;
+    rdfs:domain trsp:AnnotationReference ;
+    rdfs:range rdfs:Resource .
+
+#################################################################
+# Attribute properties
+#################################################################
+
+trsp:hasMeasurementType a rdf:Property ;
+    rdfs:label "Has Measurement Type"@en ;
+    rdfs:domain trsp:Attribute ;
+    rdfs:range trsp:MeasurementType .
+
+trsp:benchmark a rdf:Property ;
+    rdfs:label "benchmark"@en ;
+    rdfs:domain trsp:Attribute .                         ## may have to be broadened, also applies to profiles
+
+#    One of 4 cardinality types, from a vocabulary
+trsp:hasCardinalityType a rdf:Property ;
+    rdfs:label "Cardinality Code"@en ;
+    rdfs:domain trsp:Attribute ;
+    rdfs:range trsp:CardinalityType .
+
+trsp:hasProfile a rdf:Property ;
+    rdfs:label "Has Applicable Profile"@en ;
+    rdfs:domain trsp:Attribute ;
+    rdfs:range trsp:Profile .
+
+trsp:hasProfileAssertion a rdf:Property ;
+    rdfs:label "Has Applicable Profile Assertion"@en ;
+    rdfs:domain trsp:Attribute ;
+    rdfs:range trsp:ProfileAssertion .
+
+############################
+# Profile properties
+############################
+
+trsp:hasProfileType a rdf:Property ;
+    rdfs:label "has profile type"@en ;
+    rdfs:domain trsp:Profile ;
+    rdfs:range trsp:ProfileType .
+
+trsp:hasAttributeAssertion a rdf:Property ;
+    rdfs:label "has attribute assertion"@en ;
+    rdfs:domain trsp:Profile ;
+    rdfs:range trsp:AttributeAssertion .
+
+####################################################################################
+# Attribute assertion
+# Applies to those repositories and services that measure one or more attributes
+####################################################################################
+
+trsp:aboutAttribute a rdf:Property ;                    ## nomenclature change
+    rdfs:label "about attribute"@en ;
+    rdfs:domain trsp:AttributeAssertion ;
+    rdfs:range trsp:Attribute .
+
+trsp:forProfile a rdf:Property ;
+    rdfs:label "for profile"@en ;
+    rdfs:domain trsp:AttributeAssertion ;
+    rdfs:range trsp:Profile .
+
+####################################################################################
+# Attribute measurement
+####################################################################################
+
+## trsp:measurement a rdf:Property .                    ## preferred term
+
+trsp:value a rdf:Property ;
+    rdfs:label "value"@en ;
+    rdfs:domain trsp:AttributeAssertion .
+
+trsp:measurementDate a rdf:Property ;
+    rdfs:label "measurement date"@en ;
+    rdfs:domain trsp:AttributeAssertion ;
+    rdfs:range xsd:date .
+
+trsp:measurementProvenance a rdf:Property ;
+    rdfs:label "measurement provenance"@en ;
+    rdfs:domain trsp:AttributeAssertion ;
+    rdfs:range rdfs:Resource .
+
+##########################################################################################
+# Service - Repository relations
+##########################################################################################
+
+trsp:hasServiceRelation a rdf:Property ;
+    rdfs:label "has service relation"@en ;
+    rdfs:domain trsp:Repository ;
+    rdfs:range trsp:ServiceRelation .
+
+trsp:repository a rdf:Property ;
+    rdfs:label "repository"@en ;
+    rdfs:domain trsp:ServiceRelation ;
+    rdfs:range trsp:Repository .
+
+########################################################################################
+# Profile Assertion Properties
+# Applies to any profile that includes an attribute
+########################################################################################
+
+#    The class (type) of profile
+trsp:profileClass a rdf:Property ;
+    rdfs:label "profile class"@en ;
+    rdfs:domain trsp:ProfileAssertion ;
+    rdfs:range skos:Concept .                   ## this value must come from a vocabulary
+
+#    The IRI used by the profile to uniquely identify the attribute
+trsp:profileAttributeIRI a rdf:Property ;
+    rdfs:label "profile attribute IRI"@en ;
+    rdfs:domain trsp:ProfileAssertion ;
+    rdfs:range rdfs:Resource .
+
+#     The label used by the profile to name this attribute
+trsp:profileAttributeLabel a rdf:Property ;
+    rdfs:label "profile attribute label"@en ;
+    rdfs:domain trsp:ProfileAssertion .
+
+#    The category of the attribute as used in the profile
+trsp:profileAttributeCategory a rdf:Property ;
+    rdfs:label "profile attribute category"@en ;
+    rdfs:domain trsp:ProfileAssertion .
+
+#    Profile aggregation type - how to process a result obtained from a measurement test for this profile attribute
+trsp:profileAttributeAggregationType a rdf:Property ;
+    rdfs:label "profile attribute aggregation type"@en ;
+    rdfs:domain trsp:ProfileAssertion ;
+    rdfs:range skos:Concept .
+
+#    A value/ pointer to a web resource describing the benchmark, a vocabulary IRI, a registry, a REST API returning a value, ...
+trsp:profileBenchmark a rdf:Property ;
+    rdfs:label "profile benchmark"@en ;
+    rdfs:domain trsp:ProfileAssertion .
+
+#    A controlled vocabulary describing the benchmark (measurement) type
+#    trsp:measurementTypeVocabulary
+trsp:profileBenchmarkIRI a rdf:Property ;
+    rdfs:label "profile benchmark IRI"@en ;
+    rdfs:domain trsp:ProfileAssertion ;
+    rdfs:range rdfs:Resource .
+
+trsp:ExternalIdentifier a rdfs:Class ;
+    rdfs:label "External identifier"@en .
+
+#    Not sure about this one - reused by some properties in the 'Profile' class
+trsp:profileAttributeValue a rdf:Property ;
+    rdfs:label "profile attribute value"@en ;
+    rdfs:domain trsp:ProfileAssertion .
+
+trsp:service a rdf:Property ;
