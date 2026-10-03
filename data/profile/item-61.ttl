@@ -335,7 +335,7 @@ fidelis:typeOfRepository a trsp:Property ;
     trsp:hasBenchmark r3d:typeRepository ;
     owl:version "0.4.1" .
 
-fidelis.listMetadata a trsp:Property ;
+fidelis:listMetadata a trsp:Property ;
     rdf:label "Metadata Schema Supported" ;
     skos:definition "The metadata schema and profiles supported by the repository" ;
     trsp:linkedProperty trsp:listMetadataSchema ;
