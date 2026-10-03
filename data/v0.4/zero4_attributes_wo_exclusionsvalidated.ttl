@@ -4875,8 +4875,8 @@ trsp:att.4813ACF624
 
 trsp:att.2DA1C98050
   a skos:Concept ;
-  skos:prefLabel "Service Metdata Available"@en ;
-  schema:category "Technology|Services|External/ Micro-Services|Ownership|Service Metdata Available"@en ;
+  skos:prefLabel "Service Metadata Available"@en ;
+  schema:category "Technology|Services|External/ Micro-Services|Ownership|Service Metadata Available"@en ;
   dcat:keyword "EDEN" ;
   owl:versionInfo "0.1" ;
   skos:broader trsp:att.1DB4B1E4F0 ;
