@@ -1,0 +1,53 @@
+# Simple prefix Information Fidelis example
+@prefix fidelis: <https://github.com/wimhugo/kb-attributes-eden-fidelis-trsp/blob/main/data/profile/item-61.ttl> .
+@prefix trsp:   <https://example.org/trsp/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix disc:   <https://github.com/wimhugo/kb-attributes-eden-fidelis-trsp/blob/main/.configs/vocabs/eosc/> .
+@prefix pidreg: <https://github.com/wimhugo/kb-attributes-eden-fidelis-trsp/blob/main/data/registry/pid.ttl> .
+@prefix msct:   <https://github.com/wimhugo/kb-attributes-eden-fidelis-trsp/blob/main/data/registry/metadata.ttl> .
+@prefix r3d:    <https://github.com/wimhugo/kb-attributes-eden-fidelis-trsp/tree/main/.configs/vocabs/r3d> .
+
+# The FIDELIS profile example Information
+trsp:profile.3C2D6C1C37 a trsp:Profile ;
+    dct:title "FIDELIS" @en ;
+    dct:description "The FIDELIS project will establish and consolidate a European network of FAIR-enabling trustworthy digital repositories that will live on after the project finishes and represent its member repositories to key stakeholders on important matters." @en ;
+    dct:identifier <https://eden-fidelis.eu/>  ;
+    dcat:endpointURL <https://eden-fidelis.eu/>  ;
+    trsp:hasProfileType "trsp:profile-type-community"  .
+
+# The no content simplified example TDR Information 
+trsp:repo.example00B8 a trsp:Repository ;
+	  fidelis:repositoryName "" ;
+	  fidelis:url "" ;
+	  fidelis:purpose "" ;
+	  fidelis:governanceStructure "" ;
+	  fidelis:keyStakeholders "" ;
+	  fidelis:memberships "" ;
+	  fidelis:coretrustsealCertificationStatus "" ;
+	  fidelis:endorsedTrustPrinciples "" ;
+	  fidelis:certifications "" ;
+	  fidelis:yearEstablished "" ;
+	  fidelis:fileFormats "" ;
+	  fidelis:vocabulariesUsed "" ;
+	  fidelis:persistentIdentifierSystem "" ;
+	  fidelis:licence "" ;
+	  fidelis:hostingInstitutionOrganisation "" ;
+	  fidelis:governanceModel "" ;
+	  fidelis:dataAccessPolicy "" ;
+	  fidelis:preservationPolicy "" ;
+	  fidelis:depositPolicy "" ;
+	  fidelis:dataRetentionPolicy "" ;
+	  fidelis:countryCoverage "" ;
+	  fidelis:primaryResearchDomains "" ;
+	  fidelis:eoscNodeParticipation "" ;
+	  fidelis:fundingModel "" ;
+	  fidelis:revenueType "" ;
+	  fidelis:dataTypesAccepted "" ;
+	  fidelis:apisAvailable "" ;
+	  fidelis:countryRegion "" ;
+ 	  fidelis:typeOfRepository "" ;
+	  fidelis:listMetadata "" . 
