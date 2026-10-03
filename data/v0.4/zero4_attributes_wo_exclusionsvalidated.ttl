@@ -2325,7 +2325,7 @@ trsp:att.5842EC5239
   skos:broader trsp:att.00577FC6FC ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeFormat ;
-  trsp:hasBenchmark Float ;
+  trsp:hasBenchmark "Float" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.54CF71ED24
