@@ -3709,7 +3709,7 @@ trsp:att.3E1CA96845
   skos:broader trsp:att.1B94296BAD ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark File Type URIs ;
+  trsp:hasBenchmark "File Type URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.50E0581B3D
@@ -4065,7 +4065,7 @@ trsp:att.167C47D292
   skos:broader trsp:att.3E5F32A9E8 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeChecklist ;
-  trsp:hasBenchmark Custom with Evidence ;
+  trsp:hasBenchmark "Custom with Evidence" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.543A727F84
@@ -4077,7 +4077,7 @@ trsp:att.543A727F84
   skos:broader trsp:att.3E5F32A9E8 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Licence Facade, SPDX ;
+  trsp:hasBenchmark "Licence Facade, SPDX" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.2F993B25AD
@@ -4089,7 +4089,7 @@ trsp:att.2F993B25AD
   skos:broader trsp:att.3E5F32A9E8 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark PID-KB ;
+  trsp:hasBenchmark "PID-KB" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.6AF56A372D
@@ -4101,7 +4101,7 @@ trsp:att.6AF56A372D
   skos:broader trsp:att.3E5F32A9E8 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark LOV ;
+  trsp:hasBenchmark "LOV" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.6EED29CAE5
@@ -4169,7 +4169,7 @@ trsp:att.45EC53C288
   skos:broader trsp:att.3E5F32A9E8 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Schema URIs ;
+  trsp:hasBenchmark "Schema URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.32846CB4DF
@@ -4260,7 +4260,7 @@ trsp:att.0563752C9F
   skos:broader trsp:att.66C6612EA5 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Service URIs ;
+  trsp:hasBenchmark "Service URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.53947860B6
@@ -4294,7 +4294,7 @@ trsp:att.6EB55F36B2
   skos:broader trsp:att.156B52FB19 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Service URIs ;
+  trsp:hasBenchmark "Service URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.3DA6C87583
@@ -4351,7 +4351,7 @@ trsp:att.1669AF8869
   skos:broader trsp:att.540F680A1E ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Schema URIs ;
+  trsp:hasBenchmark "Schema URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.374F095E69
@@ -4429,7 +4429,7 @@ trsp:att.3B49F36F75
   skos:broader trsp:att.50DA0AA84E ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Schema Crosswalk URIs ;
+  trsp:hasBenchmark "Schema Crosswalk URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.0FAB8D7E65
@@ -4465,7 +4465,7 @@ trsp:att.6A439A6743
   skos:broader trsp:att.50DA0AA84E ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Service URIs ;
+  trsp:hasBenchmark "Service URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.6CA1A54238
@@ -4478,7 +4478,7 @@ trsp:att.6CA1A54238
   skos:broader trsp:att.50DA0AA84E ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Schema Crosswalk URIs ;
+  trsp:hasBenchmark "Schema Crosswalk URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.699F35CDBC
@@ -4512,7 +4512,7 @@ trsp:att.7ABEF7ECA8
   skos:broader trsp:att.110C424081 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Service URIs ;
+  trsp:hasBenchmark "Service URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.2E92627E37
@@ -4737,7 +4737,7 @@ trsp:att.337C35222E
   skos:broader trsp:att.1AE2618C36 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeChecklist ;
-  trsp:hasBenchmark SAML;OAuth2;OpenIDConnect ;
+  trsp:hasBenchmark "SAML;OAuth2;OpenIDConnect" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.178C46C3F1
@@ -4783,7 +4783,7 @@ trsp:att.2C0457E919
   skos:broader trsp:att.22F180559A ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Certification URIs ;
+  trsp:hasBenchmark "Certification URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.133FBDB8C2
@@ -4795,7 +4795,7 @@ trsp:att.133FBDB8C2
   skos:broader trsp:att.1593E1AE08 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Certification URIs ;
+  trsp:hasBenchmark "Certification URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.067B4C3677
@@ -4819,7 +4819,7 @@ trsp:att.1BFD0D011D
   skos:broader trsp:att.7F2AF694BC ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Certification URIs ;
+  trsp:hasBenchmark "Certification URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.16021E265C
@@ -4831,7 +4831,7 @@ trsp:att.16021E265C
   skos:broader trsp:att.6FB4481988 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Certification URIs ;
+  trsp:hasBenchmark "Certification URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.19AF20660A
@@ -5444,7 +5444,7 @@ trsp:att.7F192DC5FF
   skos:broader trsp:att.74FDFB3E00 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Schema URIs ;
+  trsp:hasBenchmark "Schema URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.353453C585
@@ -5467,7 +5467,7 @@ trsp:att.5BDCFB83B0
   skos:broader trsp:att.74FDFB3E00 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark Schema URIs ;
+  trsp:hasBenchmark "Schema URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.568D8C8984
@@ -5721,7 +5721,7 @@ trsp:att.0F645C5E04
   skos:broader trsp:att.5F06EEC902 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  trsp:hasBenchmark External Registry or List ;
+  trsp:hasBenchmark "External Registry or List" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.04C904A984
