@@ -17,7 +17,7 @@ trsp:trsp-attributes a skos:ConceptScheme ;
   dct:contributor "Dieuwertje Bloemen" ;
   dct:contributor "Mohan Ramamurthy" ;
   dct:contributor "RDA TRSP WG" ;
-  dct:description "A comprehensive inventory of repository and repository services attributes"@en ; 
+  dct:description "A comprehensive inventory of repository and repository services attributes"@en ;
   dct:modified "2026-05-07T00:00:00+00:00"^^xsd:dateTime;
   dct:modified "2026-04-29T00:00:00+00:00"^^xsd:dateTime ;
   dct:rights <https://spdx.org/licenses/CC0-1.0>;
@@ -31,7 +31,7 @@ trsp:trsp-attributes a skos:ConceptScheme ;
                       trsp:att.305548D83D ,
                       trsp:att.27E790A86B ;
   skos:prefLabel "TRSP Attributes"@en ;
-  owl:versionInfo "0.4"@en ;
+  owl:versionInfo "0.4"@en;
   foaf:homepage  <https://github.com/wimhugo/kb-attributes-eden-fidelis-trsp/> .
 
 trsp:att.4cb9ed25fe
@@ -2038,7 +2038,7 @@ trsp:att.0341AA63B1
   skos:broader trsp:att.375960B05E ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "RI URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.70BFED1AC3
@@ -2050,7 +2050,7 @@ trsp:att.70BFED1AC3
   skos:broader trsp:att.375960B05E ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-  
+  trsp:hasBenchmark "Repository URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.394BC515E7
@@ -2084,7 +2084,7 @@ trsp:att.241E6C58DF
   skos:broader trsp:att.375960B05E ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "RoR URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.3D988650EC
@@ -2096,7 +2096,7 @@ trsp:att.3D988650EC
   skos:broader trsp:att.365F68CB18 ;
   trsp:hasCardinalityType trsp:cardinality1_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Metadata Schema" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.141AB906EC
@@ -2108,7 +2108,7 @@ trsp:att.141AB906EC
   skos:broader trsp:att.365F68CB18 ;
   trsp:hasCardinalityType trsp:cardinality1_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "License" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.1AD6D47183
@@ -2120,7 +2120,7 @@ trsp:att.1AD6D47183
   skos:broader trsp:att.365F68CB18 ;
   trsp:hasCardinalityType trsp:cardinality1_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "PID" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.678241192E
@@ -2143,7 +2143,7 @@ trsp:att.02B14C3A2C
   skos:broader trsp:att.365F68CB18 ;
   trsp:hasCardinalityType trsp:cardinality1_n ;
   trsp:hasMeasurementType trsp:measurementTypeVocabulary ;
- 
+  trsp:hasBenchmark "iso:iso-639-3.ttl" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.1DD721CC5B
@@ -2212,7 +2212,7 @@ trsp:att.51C655BFB0
   skos:broader trsp:att.700343D2B3 ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Vocabularies, Semantic Artefacts" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.7AC495443D
@@ -2313,7 +2313,7 @@ trsp:att.1C44587E88
   skos:broader trsp:att.570534F4B8 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeFormat ;
-
+  trsp:hasBenchmark "Float" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.5842EC5239
@@ -2325,7 +2325,7 @@ trsp:att.5842EC5239
   skos:broader trsp:att.00577FC6FC ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeFormat ;
-
+  trsp:hasBenchmark Float ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.54CF71ED24
@@ -3066,7 +3066,7 @@ trsp:att.50ADCE9E0D
   skos:broader trsp:att.4AA1880060 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Tool URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.2EC221BD80
@@ -3156,7 +3156,7 @@ trsp:att.4CB4F7ED15
   skos:broader trsp:att.532324DE1D ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Service URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.1C5F7AAA09
@@ -3312,7 +3312,7 @@ trsp:att.3E5176E2B8
   skos:broader trsp:att.28A2220E45 ;
   trsp:hasCardinalityType trsp:cardinality1_n ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Licence URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.7298144E24
@@ -3381,7 +3381,7 @@ trsp:att.27C898E8A0
   skos:broader trsp:att.371D70B854 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Certification URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.1224E087E0
@@ -3393,7 +3393,7 @@ trsp:att.1224E087E0
   skos:broader trsp:att.371D70B854 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Assessment URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.6E27DEF3A1
@@ -3405,7 +3405,7 @@ trsp:att.6E27DEF3A1
   skos:broader trsp:att.371D70B854 ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "Assessment URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.516450BF5E
@@ -3697,7 +3697,7 @@ trsp:att.1BF23E39F5
   skos:broader trsp:att.1B94296BAD ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "File Type URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.3E1CA96845
@@ -3709,7 +3709,7 @@ trsp:att.3E1CA96845
   skos:broader trsp:att.1B94296BAD ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "File Type URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.50E0581B3D
@@ -3722,7 +3722,7 @@ trsp:att.50E0581B3D
   skos:broader trsp:att.1B94296BAD ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeRegistry ;
-
+  trsp:hasBenchmark "File Type URIs" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.236C15FEA4
@@ -3778,7 +3778,7 @@ trsp:att.34D1282F11
   skos:broader trsp:att.64FDE59BAD ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeVocabulary ;
-
+  trsp:hasBenchmark "iso:iso-3166-1.ttl" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.5D0E8069FC
@@ -3790,7 +3790,7 @@ trsp:att.5D0E8069FC
   skos:broader trsp:att.64FDE59BAD ;
   trsp:hasCardinalityType trsp:cardinality0_n ;
   trsp:hasMeasurementType trsp:measurementTypeFormat ;
-
+  trsp:hasBenchmark "Start Date|End Date" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.115BEEC616
@@ -3813,7 +3813,7 @@ trsp:att.3B633179C5
   skos:broader trsp:att.64FDE59BAD ;
   trsp:hasCardinalityType trsp:cardinality0_1 ;
   trsp:hasMeasurementType trsp:measurementTypeVocabulary ;
-
+  trsp:hasBenchmark "r3d:subject-type.ttl" ;
   skos:inScheme trsp:trsp-attributes .
 
 trsp:att.54317F78CB
